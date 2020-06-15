@@ -42,7 +42,7 @@ const (
 	DirectoryPath     = "/dir"
 	noncePath         = "/nonce-plz"
 	newAccountPath    = "/sign-me-up"
-	acctPath          = "/my-account/"
+	acctPath          = "/sign-me-up/"
 	newOrderPath      = "/order-plz"
 	orderPath         = "/my-order/"
 	orderFinalizePath = "/finalize-order/"
