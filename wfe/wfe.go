@@ -2237,7 +2237,7 @@ func (wfe *WebFrontEndImpl) updateChallenge(
 		// sent (and that's what Boulder will do) but for Pebble we'd like to offer
 		// a way to be more aggressive about pushing clients implementations in the
 		// right direction, so we treat this as a malformed request.
-		if chalResp.KeyAuthorization != nil {
+		if wfe.strict && chalResp.KeyAuthorization != nil {
 			wfe.sendError(
 				acme.MalformedProblem(
 					"Challenge response body contained legacy KeyAuthorization field, "+
