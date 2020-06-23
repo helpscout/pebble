@@ -11,10 +11,10 @@ RUN apt-get update && apt-get install -y \
 ENV CGO_ENABLED=0
 # GOFLAGS=-mod=vendor
 
+RUN go get github.com/go-delve/delve/cmd/dlv
+
 WORKDIR /pebble-src
 COPY . .
-
-RUN go get github.com/go-delve/delve/cmd/dlv
 
 #RUN go install -v ./cmd/pebble/...
 RUN go install -gcflags="all=-N -l" -v ./cmd/pebble/...
