@@ -230,7 +230,9 @@ func (ca *CAImpl) newCertificate(domains []string, ips []net.IP, key crypto.Publ
 		},
 		SerialNumber: serial,
 		NotBefore:    time.Now(),
-		NotAfter:     time.Now().AddDate(5, 0, 0),
+		//NotAfter:     time.Now().AddDate(5, 0, 0),
+		NotAfter: time.Now().AddDate(0, 3, 0),
+		//NotAfter:     time.Now().Add(time.Duration(1)*time.Minute),
 
 		KeyUsage:              x509.KeyUsageDigitalSignature | x509.KeyUsageKeyEncipherment,
 		ExtKeyUsage:           []x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth, x509.ExtKeyUsageClientAuth},
